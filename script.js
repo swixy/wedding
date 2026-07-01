@@ -1,4 +1,5 @@
-const FORM_ENDPOINT = '';
+// URL веб-приложения Google Apps Script (см. google-apps-script/Code.gs)
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwWOJJocjzDYLEXwJIKV081JG_QspMnfniar_igGlZ5PBkIkx3bK7zAUvyOgGHnuAa8/exec';
 
 const HERO_TRANSITION_MS = 920;
 const HERO_SWIPE_MIN = 28;
@@ -189,7 +190,7 @@ function initForm() {
 
     if (!FORM_ENDPOINT) {
       setStatus(
-        'Форма готова. Чтобы сохранять ответы, вставьте ссылку Google Apps Script в переменную FORM_ENDPOINT в script.js.',
+        'Форма готова. Подключите Google Таблицу: инструкция в папке google-apps-script, затем вставьте URL в FORM_ENDPOINT в script.js.',
         'warning'
       );
       console.info('RSVP payload preview:', payload);
