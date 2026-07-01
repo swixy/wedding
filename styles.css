@@ -449,7 +449,7 @@ body::before {
   box-shadow: none;
 }
 
-.intro-photo-wrap::after {
+/* .intro-photo-wrap::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -458,7 +458,7 @@ body::before {
   background:
     radial-gradient(ellipse at center, transparent 52%, rgba(22, 18, 12, .22) 100%),
     linear-gradient(180deg, rgba(22, 18, 12, .12) 0, transparent 22%, transparent 78%, rgba(22, 18, 12, .18) 100%);
-}
+} */
 
 .intro-meta {
   margin: clamp(10px, 1.8svh, 14px) 0 0;
@@ -1781,6 +1781,7 @@ h2 {
     gap: 8px;
     margin-top: 14px;
     flex-wrap: nowrap;
+    display: none;
   }
 
   .dress-palette span {
