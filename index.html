@@ -35,29 +35,25 @@
   <div class="site-scroll" id="site-scroll">
     <main class="site-content">
 
-      <section class="blue intro-panel">
+      <section class="blue intro-panel" id="intro">
+        <div class="monogram" aria-hidden="true">А &amp; М</div>
         <div class="intro-stack">
-          <div class="section-heading">
+          <div class="section-heading intro-reveal" data-intro-reveal style="--reveal-delay: 0ms">
             <h2>ДЕНЬ, О КОТОРОМ<br>МЫ МЕЧТАЛИ</h2>
             <div class="rule"></div>
           </div>
-          <p class="intro-text">
-            Дорогие родные и близкие, мы приглашаем Вас разделить с нами самое важное «да» в нашей жизни -<br>
-            <strong>ДЕНЬ НАШЕЙ СВАДЬБЫ</strong>
-          </p>
-          <img class="intro-photo" src="couple-main.jpg" alt="Антон и Мария">
-          <div class="date-ring" aria-label="15 августа 2026">
-            <span>в этот день</span>
-            <strong>
-              <b>15</b>
-              <i></i>
-              <b>08</b>
-              <i></i>
-              <b>26</b>
-            </strong>
-            <span>августа 2026</span>
+          <div class="intro-copy intro-reveal" data-intro-reveal style="--reveal-delay: 140ms">
+            <p class="intro-text">
+              Дорогие родные и близкие, мы приглашаем Вас разделить с нами самое важное «да» в нашей жизни — <span class="intro-highlight">День нашей свадьбы</span>
+            </p>
           </div>
+          <figure class="intro-photo-wrap intro-reveal" data-intro-reveal style="--reveal-delay: 280ms">
+            <img class="intro-photo intro-photo-parallax" src="couple-main.jpg" alt="Антон и Мария">
+          </figure>
         </div>
+        <svg class="intro-wave" viewBox="0 0 360 40" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,40 L360,40 L360,22 Q342,4 324,22 Q306,4 288,22 Q270,4 252,22 Q234,4 216,22 Q198,4 180,22 Q162,4 144,22 Q126,4 108,22 Q90,4 72,22 Q54,4 36,22 Q18,4 0,22 Z"/>
+        </svg>
       </section>
 
       <section class="paper venue-panel">
@@ -131,27 +127,46 @@
         </div>
         <div class="details-body">
           <div class="detail-card-grid detail-card-grid--four">
-            <article class="detail-card">
-              <h3>Дресс-код</h3>
+            <article class="detail-card detail-card--floral">
+              <div class="detail-card-head">
+                <img class="detail-card-icon" src="icons/details/shirt.svg" alt="" width="40" height="40">
+                <h3>Дресс-код</h3>
+              </div>
               <div class="detail-card-content">
                 <p>Главный элемент дресс-кода - это ваши улыбки! В дополнение к ним мы бы хотели видеть вечерние наряды дам в спокойных цветочных тонах, избегая красного, чёрного, приближённых к белому цветов. А мужчинам просто соответствовать своим дамам.</p>
+                <div class="dress-palette" aria-hidden="true">
+                  <span style="background:#8fa07a"></span>
+                  <span style="background:#c4a882"></span>
+                  <span style="background:#b8a4c4"></span>
+                  <span style="background:#d4b8a8"></span>
+                </div>
               </div>
             </article>
-            <article class="detail-card">
+            <article class="detail-card detail-card--floral">
+              <div class="detail-card-head">
+                <img class="detail-card-icon" src="icons/details/users.svg" alt="" width="40" height="40">
+                <h3>Праздник для взрослых</h3>
+              </div>
               <div class="detail-card-content">
                 <p>Дорогие гости, наш вечер будет особенным и, к сожалению, не совсем подходящим для маленьких деток. Пожалуйста, позвольте себе отдохнуть и насладиться праздником в кругу взрослых.</p>
               </div>
             </article>
-            <article class="detail-card">
-              <h3>Трансфер</h3>
+            <article class="detail-card detail-card--floral">
+              <div class="detail-card-head">
+                <img class="detail-card-icon" src="icons/details/bus.svg" alt="" width="40" height="40">
+                <h3>Трансфер</h3>
+              </div>
               <div class="detail-card-content">
-                <p>Для вашего комфорта будет организован трансфер по маршруту: Мельники-Малорита-Брест-Свадьба, а так же по завершение праздника в обратную сторону. Подробности сообщим вам позже</p>
+                <p>Для вашего комфорта будет организован трансфер по маршруту: <span class="transfer-route-inline">Мельники • Малорита • Брест • <em>Свадьба</em></span>, а так же по завершение праздника в обратную сторону. Подробности сообщим вам позже</p>
               </div>
             </article>
-            <article class="detail-card">
-              <h3>Подарки</h3>
+            <article class="detail-card detail-card--floral">
+              <div class="detail-card-head">
+                <img class="detail-card-icon" src="icons/details/gift.svg" alt="" width="40" height="40">
+                <h3>Подарки</h3>
+              </div>
               <div class="detail-card-content">
-                <p>Не обременяйте себя покупкой красивого букета, в свадебной суматохе у нас не получится уследить и в полной мере насладиться красотой ваших цветов. Вы можете вовсе прийти без них или сделать выбор в пользу хорошего алкоголя.</p>
+                <p>Не обременяйте себя покупкой красивого букета, в свадебной суматохе у нас не получится уследить и в полной мере насладиться красотой ваших цветов. Вы можете вовсе прийти без них или сделать выбор в пользу хорошего алкоголя<img class="detail-inline-icon" src="icons/details/wine.svg" alt="" width="16" height="16">.</p>
               </div>
             </article>
           </div>
@@ -159,56 +174,97 @@
       </section>
 
       <section class="paper rsvp-panel">
+        <svg class="rsvp-wave-top" viewBox="0 0 360 28" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,28 L360,28 L360,14 Q342,0 324,14 Q306,0 288,14 Q270,0 252,14 Q234,0 216,14 Q198,0 180,14 Q162,0 144,14 Q126,0 108,14 Q90,0 72,14 Q54,0 36,14 Q18,0 0,14 Z"/>
+        </svg>
         <div class="section-heading">
           <h2>ПОДТВЕРДИТЕ<br>ПРИСУТСТВИЕ</h2>
           <div class="rule"></div>
         </div>
         <div class="rsvp-body">
-          <p class="rsvp-deadline">Пожалуйста, подтвердите свое присутствие до <strong>20.07.2026</strong></p>
+          <p class="rsvp-deadline">Пожалуйста, подтвердите свое присутствие до <span class="rsvp-deadline__date">20.07.2026</span></p>
           <form class="rsvp-form" id="rsvp-form" novalidate>
-            <label class="rsvp-field">
-              <span>Ваше Имя и Фамилия (если вы пара, пишите все в одной анкете) *</span>
-              <textarea name="name" rows="2" required></textarea>
-            </label>
 
-            <fieldset class="rsvp-field">
-              <legend>Сможете ли Вы присутствовать? *</legend>
-              <label><input type="radio" name="attendance" value="Смогу/сможем присутствовать" required> Смогу/сможем присутствовать</label>
-              <label><input type="radio" name="attendance" value="Затрудняюсь ответить, сообщу позже"> Затрудняюсь ответить, сообщу позже</label>
-              <label><input type="radio" name="attendance" value="Не смогу/сможем прийти"> Не смогу/сможем прийти</label>
-            </fieldset>
-
-            <p class="rsvp-note">
-              Предпочтения по напиткам:<br>
-              (Шампанское, вино белое сухое/полусладкое, вино красное сухое/полусладкое, водка, самогон, коньяк, безалкогольное, другое)
-            </p>
-
-            <div class="rsvp-drinks">
+            <div class="rsvp-card">
+              <span class="rsvp-card__num">1</span>
               <label class="rsvp-field">
-                <span>Точно буду пить:</span>
-                <textarea name="drinks_yes" rows="2"></textarea>
-              </label>
-              <label class="rsvp-field">
-                <span>Наверное буду пить:</span>
-                <textarea name="drinks_maybe" rows="2"></textarea>
-              </label>
-              <label class="rsvp-field">
-                <span>Точно не буду пить:</span>
-                <textarea name="drinks_no" rows="2"></textarea>
+                <span class="rsvp-label">Ваше Имя и Фамилия&nbsp;<span class="req" aria-hidden="true">*</span></span>
+                <span class="rsvp-hint">если вы пара, пишите все в одной анкете</span>
+                <textarea name="name" rows="2" required placeholder="Иванов Иван, Иванова Мария"></textarea>
               </label>
             </div>
 
-            <fieldset class="rsvp-field rsvp-field--row">
-              <legend>Нужен ли Вам трансфер? (Предварительно)</legend>
-              <label><input type="radio" name="transfer" value="да"> да</label>
-              <label><input type="radio" name="transfer" value="нет"> нет</label>
-            </fieldset>
+            <div class="rsvp-card">
+              <span class="rsvp-card__num">2</span>
+              <fieldset class="rsvp-field rsvp-radio-group">
+                <legend class="rsvp-label">Сможете ли Вы присутствовать?&nbsp;<span class="req" aria-hidden="true">*</span></legend>
+                <label class="rsvp-radio">
+                  <input type="radio" name="attendance" value="Смогу/сможем присутствовать" required>
+                  <span class="rsvp-radio__text">Смогу/сможем присутствовать</span>
+                </label>
+                <label class="rsvp-radio">
+                  <input type="radio" name="attendance" value="Затрудняюсь ответить, сообщу позже">
+                  <span class="rsvp-radio__text">Затрудняюсь ответить, сообщу позже</span>
+                </label>
+                <label class="rsvp-radio">
+                  <input type="radio" name="attendance" value="Не смогу/сможем прийти">
+                  <span class="rsvp-radio__text">Не смогу/сможем прийти</span>
+                </label>
+              </fieldset>
+            </div>
 
-            <button class="rsvp-submit" type="submit">Отправить анкету</button>
+            <div class="rsvp-card rsvp-card--optional">
+              <span class="rsvp-card__num">3</span>
+              <p class="rsvp-note rsvp-label">Предпочтения по напиткам <span class="rsvp-optional">(необязательно)</span></p>
+              <p class="rsvp-tags-hint">Нажмите на напиток, чтобы добавить его в поле ниже</p>
+              <ul class="rsvp-tags" aria-label="Примеры напитков">
+                <li><button type="button" class="rsvp-tag" data-drink="шампанское">Шампанское</button></li>
+                <li><button type="button" class="rsvp-tag" data-drink="белое вино">Белое вино</button></li>
+                <li><button type="button" class="rsvp-tag" data-drink="красное вино">Красное вино</button></li>
+                <li><button type="button" class="rsvp-tag" data-drink="водка">Водка</button></li>
+                <li><button type="button" class="rsvp-tag" data-drink="самогон">Самогон</button></li>
+                <li><button type="button" class="rsvp-tag" data-drink="коньяк">Коньяк</button></li>
+                <li><button type="button" class="rsvp-tag" data-drink="безалкогольное">Безалкогольное</button></li>
+                <li><button type="button" class="rsvp-tag" data-drink="другое">Другое</button></li>
+              </ul>
+              <div class="rsvp-drinks">
+                <label class="rsvp-field">
+                  <span class="rsvp-label">Точно буду пить:</span>
+                  <textarea name="drinks_yes" rows="1" placeholder="например, шампанское"></textarea>
+                </label>
+                <label class="rsvp-field">
+                  <span class="rsvp-label">Наверное буду пить:</span>
+                  <textarea name="drinks_maybe" rows="1" placeholder="например, коньяк"></textarea>
+                </label>
+                <label class="rsvp-field">
+                  <span class="rsvp-label">Точно не буду пить:</span>
+                  <textarea name="drinks_no" rows="1" placeholder="например, водка"></textarea>
+                </label>
+              </div>
+            </div>
+
+            <div class="rsvp-card">
+              <span class="rsvp-card__num">4</span>
+              <fieldset class="rsvp-field rsvp-radio-group">
+                <legend class="rsvp-label">Нужен ли Вам трансфер? <span class="rsvp-optional">(предварительно)</span></legend>
+                <div class="rsvp-radio-row">
+                  <label class="rsvp-radio">
+                    <input type="radio" name="transfer" value="да">
+                    <span class="rsvp-radio__text">да</span>
+                  </label>
+                  <label class="rsvp-radio">
+                    <input type="radio" name="transfer" value="нет">
+                    <span class="rsvp-radio__text">нет</span>
+                  </label>
+                </div>
+              </fieldset>
+            </div>
+
+            <button class="rsvp-submit" type="submit" data-default-label="Отправить анкету">Отправить анкету</button>
             <p class="rsvp-status" id="rsvp-status" role="status" aria-live="polite" hidden></p>
           </form>
         </div>
-        <div class="section-footer">
+        <div class="section-footer rsvp-footer">
           <div class="timeline-notes">
             <p class="contact">С любовью,<br>Антон и Мария</p>
           </div>

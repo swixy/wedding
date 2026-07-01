@@ -197,9 +197,11 @@ function initForm() {
     }
 
     const submitButton = form.querySelector("button[type='submit']");
+    const defaultLabel = submitButton.dataset.defaultLabel || submitButton.textContent;
 
     try {
       submitButton.disabled = true;
+      submitButton.textContent = 'Отправляем...';
       setStatus('Отправляем ответ...', 'info');
 
       await fetch(FORM_ENDPOINT, {
@@ -216,9 +218,114 @@ function initForm() {
       setStatus('Не получилось отправить анкету. Попробуйте ещё раз чуть позже.', 'error');
     } finally {
       submitButton.disabled = false;
+      submitButton.textContent = defaultLabel;
     }
   });
 }
 
 initHero();
 initForm();
+initDrinkTags();
+initIntroEffects();
+
+function initDrinkTags() {
+  const form = document.getElementById('rsvp-form');
+  if (!form) return;
+
+  const drinkFields = [
+    form.querySelector('[name="drinks_yes"]'),
+    form.querySelector('[name="drinks_maybe"]'),
+    form.querySelector('[name="drinks_no"]'),
+  ].filter(Boolean);
+
+  let activeField = drinkFields[0];
+
+  drinkFields.forEach((field) => {
+    field.addEventListener('focus', () => {
+      activeField = field;
+    });
+  });
+
+  form.querySelectorAll('.rsvp-tag').forEach((button) => {
+    button.addEventListener('click', () => {
+      const drink = button.dataset.drink;
+      if (!drink || !activeField) return;
+
+      const current = activeField.value.trim();
+      activeField.value = current ? `${current}, ${drink}` : drink;
+      activeField.focus();
+    });
+  });
+}
+
+function initIntroEffects() {
+  const introPanel = document.getElementById('intro');
+  const photo = introPanel.querySelector('.intro-photo-parallax');
+  const scrollEl = document.getElementById('site-scroll');
+
+  if (!introPanel) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const revealIntro = () => {
+    introPanel.classList.add('is-visible');
+  };
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          revealIntro();
+          observer.disconnect();
+        }
+      });
+    }, {
+      root: scrollEl || null,
+      threshold: 0.15,
+    });
+
+    observer.observe(introPanel);
+  } else {
+    revealIntro();
+  }
+
+  requestAnimationFrame(() => {
+    const rect = introPanel.getBoundingClientRect();
+    if (rect.top < window.innerHeight * 0.9) revealIntro();
+  });
+
+  const heroShell = document.getElementById('hero-shell');
+  if (heroShell) {
+    const heroObserver = new MutationObserver(() => {
+      if (heroShell.classList.contains('hero-shell--dismissed')) {
+        window.setTimeout(revealIntro, 280);
+      }
+    });
+    heroObserver.observe(heroShell, { attributes: true, attributeFilter: ['class'] });
+  }
+
+  if (reduceMotion || !photo || !scrollEl) return;
+
+  let ticking = false;
+
+  const updateParallax = () => {
+    ticking = false;
+    const rect = introPanel.getBoundingClientRect();
+    const viewH = scrollEl.clientHeight;
+
+    if (rect.bottom < 0 || rect.top > viewH) return;
+
+    const progress = (viewH - rect.top) / (viewH + rect.height);
+    const offset = (progress - 0.5) * 28;
+    photo.style.transform = `translateY(${offset.toFixed(2)}px)`;
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(updateParallax);
+  };
+
+  scrollEl.addEventListener('scroll', onScroll, { passive: true });
+  updateParallax();
+}
